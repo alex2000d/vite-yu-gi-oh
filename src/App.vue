@@ -9,19 +9,20 @@ export default {
    Appmain,
   },
   created(){
-
+      this.getcardlist()
   },
   methods:{
        getcardlist(){
         axios.get(store.apiurl).then((result)=>{
-          // store.cardlist =
+          store.cardlist = result.data.data
         })
        }
   },
 
   data(){
       return{
-        store
+        store,
+        cardlist: [],
       }
   }
 }

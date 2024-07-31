@@ -1,6 +1,13 @@
 <script>
+import { store } from '../store.js'
+
 export default {
-    
+    data(){
+    return{
+      store,
+    }
+  }
+
 }
 </script>
 <template>
@@ -25,41 +32,13 @@ export default {
                         </div>
                     </div>
                     <div class="container">
-                        <div class="row">
-                          <div class="cards d-flex">
-                              <div class="card me-3" style="width: 16rem;">
-                                  <img src="..." class="card-img-top" alt="...">
+                        <div class="row row-cols-5">
+                          <div class="col" v-for="card in store.cardlist">
+                              <div class="card me-3" style="width: 14rem;">
+                                  <img :src="card.card_images[0].image_url" class="card-img-top">
                                   <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text"></p>
-                                  </div>
-                              </div>
-                              <div class="card" style="width: 16rem;">
-                                  <img src="..." class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text"></p>
-                                  </div>
-                              </div>
-                              <div class="card" style="width: 16rem;">
-                                  <img src="..." class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text"></p>
-                                  </div>
-                              </div>
-                              <div class="card" style="width: 16rem;">
-                                  <img src="..." class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text"></p>
-                                  </div>
-                              </div>
-                              <div class="card" style="width: 16rem;">
-                                  <img src="..." class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text"></p>
+                                    <h5 class="card-title">{{card.name}}</h5>
+                                    <p class="card-text">{{ card.archetype }}</p>
                                   </div>
                               </div>
                           </div>
