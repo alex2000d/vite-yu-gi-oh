@@ -2,9 +2,11 @@
 import { store } from './store.js'
 import axios from 'axios';
 import Appheader from './components/Appheader.vue';
+import Appmain from './components/Appmain.vue';
 export default {
   components:{
    Appheader,
+   Appmain,
   },
   created(){
 
@@ -27,6 +29,7 @@ export default {
 <template lang="">
   <div>
     <Appheader />
+    <Appmain />
   </div>
 </template>
 <style lang="scss">
