@@ -12,7 +12,7 @@ export default {
 </script>
 <template>
     <div class="py-4 mx-3 main">
-        <div class="py-4 mx-5">
+        <div class="py-4 margin">
             <select class="form-select" style="width: 16rem;" aria-label="Default select example">
                 <option selected>alien</option>
                 <option value="1">One</option>
@@ -26,7 +26,7 @@ export default {
                     <div class="container bg-dark">
                         <div class="row">
                             <div class="col-12">
-                                <p class="text-white mt-3">found 39 card</p>
+                                <p class="text-white mt-3"> found {{store.cardlist.length}} cards</p>
                                 
                             </div>
                         </div>
@@ -37,7 +37,7 @@ export default {
                               <div class="card me-3" style="width: 14rem;">
                                   <img :src="card.card_images[0].image_url" class="card-img-top">
                                   <div class="card-body">
-                                    <h5 class="card-title">{{card.name}}</h5>
+                                    <h5 class="card-title text-white">{{card.name}}</h5>
                                     <p class="card-text">{{ card.archetype }}</p>
                                   </div>
                               </div>
@@ -53,5 +53,14 @@ export default {
 <style lang="scss">
     .main{
         background-color: orange;
+    }
+
+    .card-body{
+        background-color: rgb(213, 136, 2);
+        height: 120px;
+    }
+
+    .margin{
+        margin-left: 60px;
     }
 </style>
