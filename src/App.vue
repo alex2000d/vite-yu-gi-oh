@@ -9,13 +9,19 @@ export default {
    Appmain,
   },
   created(){
-      this.getcardlist()
+      this.getcardlist(),
+      this.gettypesarrey()
   },
   methods:{
        getcardlist(){
         axios.get(store.apiurl).then((result)=>{
           store.cardlist = result.data.data
         })
+       },
+       gettypesarrey(){
+        axios.get(store.apiurltypes).then((result)=>{
+          store.typesarrey = result.data
+        });
        }
   },
 
