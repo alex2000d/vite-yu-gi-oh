@@ -20,7 +20,9 @@ export default {
        },
        gettypesarrey(){
         axios.get(store.apiurltypes).then((result)=>{
-          store.typesarrey = result.data
+          for (let i=0; i < 10; i++){
+            store.typesarrey.push(result.data[i].archetype_name)
+          }
         });
        }
   },
