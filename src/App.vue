@@ -14,6 +14,9 @@ export default {
   },
   methods:{
        getcardlist(){
+        if(store.archetypestatus != ''){
+          store.apiurl += `&archetype=${store.archetypestatus}`
+        }
         axios.get(store.apiurl).then((result)=>{
           store.cardlist = result.data.data
         })
@@ -30,7 +33,6 @@ export default {
   data(){
       return{
         store,
-        cardlist: [],
       }
   }
 }
@@ -38,7 +40,7 @@ export default {
 <template lang="">
   <div>
     <Appheader />
-    <Appmain />
+    <Appmain @filter="getcardlist"/>
   </div>
 </template>
 <style lang="scss">

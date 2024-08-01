@@ -7,9 +7,10 @@ export default {
       store,
     }
   },
+  emits:['filter'],
 methods:{
     sendarchetype(){
-
+     this.$emit('filter')
     }
 }
 }
@@ -17,8 +18,8 @@ methods:{
 <template>
     <div class="py-4 mx-3 main">
         <div class="py-4 margin">
-            <select class="form-select text-dark" style="width: 16rem;">
-                <option v-for="archetype in store.typesarrey">{{archetype}}</option>
+            <select class="form-select text-dark" style="width: 16rem;" v-model="store.archetypestatus" @change="sendarchetype()">
+                <option v-for="archetype in store.typesarrey" :value="archetype">{{archetype}}</option>
               </select>
         </div>
         <div class="container bg-white p-5">
